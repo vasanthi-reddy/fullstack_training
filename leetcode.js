@@ -41,4 +41,33 @@ console.log(counter.increment());
 console.log(counter.decrement()); 
 console.log(counter.reset());  
 
+//Apply Tranform over each array
+var map = function(arr, fn) {
+    let newArray = []
+    for (let i = 0; i < arr.length; i++) {
+        newArray.push(fn(arr[i], i));
+    }
+    return newArray
+};
+
+//Filter Elements from array
+var filter = function(arr, fn) {
+    let output = [];
+    for (let i=0; i<arr.length; i++){
+        if(fn(arr[i], i)){
+            output.push(arr[i])
+        }
+    }
+    return output
+};
+
+//Array Reduce Transformation
+var reduce = function(nums, fn, init) {
+    let val = init
+    for (let i = 0; i < nums.length; i++) {
+       val = fn(val, nums[i])
+    }
+    return val
+};
+
 //
