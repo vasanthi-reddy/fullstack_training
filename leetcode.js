@@ -4,9 +4,6 @@ function createHelloWorld() {
     return "Hello World";
   };
 }
-const helloFn = createHelloWorld();
-console.log(helloFn()); 
-console.log(helloFn()); 
 
 //Counter details
 function createCounter(n) {
@@ -14,18 +11,12 @@ function createCounter(n) {
     return n++;
   };
 }
-const counter = createCounter(10);
-console.log(counter()); 
-console.log(counter()); 
-console.log(counter()); 
 
 //To Be Or not to be
 const expect = (val) => ({
   toBe: (expected) => (val === expected ? true : (() => { throw new Error("Not Equal"); })()),
   notToBe: (expected) => (val !== expected ? true : (() => { throw new Error("Equal"); })())
 });
-console.log(expect(5).toBe(5)); 
-console.log(expect(10).notToBe(5)); 
 
 //Counter II
 const createCounter = (init) => {
@@ -36,10 +27,6 @@ const createCounter = (init) => {
     reset: () => (current = init)
   };
 };
-const counter = createCounter(10);
-console.log(counter.increment()); 
-console.log(counter.decrement()); 
-console.log(counter.reset());  
 
 //Apply Tranform over each array
 var map = function(arr, fn) {
@@ -253,3 +240,66 @@ function promiseAll(functions) {
       }
   });
 }
+
+//Is Object Empty
+function isEmpty(obj) {
+  if (Array.isArray(obj)) {
+      return obj.length === 0; 
+  } else if (typeof obj === "object" && obj !== null) {
+      return Object.keys(obj).length === 0; 
+  }
+  return false; 
+}
+
+//Chunk Array
+var chunk = function(arr, size) {
+  const chunked = []
+  let index = 0
+
+  while (index < arr.length) {
+      chunked.push(arr.slice(index, size + index))
+      index += size
+  }
+  
+  return chunked
+};
+
+//Array Prototype last
+Array.prototype.last = function() {
+  if (this.length === 0) {
+      return -1
+  }
+  return this[this.length - 1]
+};
+
+//Group By
+Array.prototype.groupBy = function(fn) {
+  const result = {};
+  this.forEach(item => {
+      const key = fn(item);
+      if (!result[key]) {
+          result[key] = [];
+      }
+      result[key].push(item);
+  });
+  return result;
+};
+
+//Sort By
+function sortBy(arr, fn) {
+  return arr.slice().sort((a, b) => fn(a) - fn(b));
+}
+
+//Join two arrays by ID
+const join = function(arr1, arr2) {
+  const ob = {};
+  for(const i of arr1) {
+      ob[i.id] = i;
+  }
+  for(const i of arr2) {
+      ob[i.id] = ob[i.id] ? {...ob[i.id], ...i} : i;
+  }
+  return Object.values(ob);
+};
+
+//
