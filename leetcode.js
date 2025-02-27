@@ -70,4 +70,16 @@ var reduce = function(nums, fn, init) {
     return val
 };
 
+//Function Composition
+var compose = function(functions) {
+    return functions.length === 0 
+        ? (x) => x 
+        : (x) => functions.reduceRight((acc, fn) => fn(acc), x);
+};
+
+//Return Length of Arguments passed
+var argumentsLength = function(...args) {
+ return args.length
+};
+
 //
