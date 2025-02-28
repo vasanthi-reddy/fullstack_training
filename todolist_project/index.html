@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo">
+            <h2>To-Do List <img src="icon.png"></h2>
+            <div class="todo1">
+                <input type = "text" id ="input-box" placeholder = "Add your text">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="todo2"></ul>
+            <button class="done" id="doneButton" onclick="clearList()">Done &#127881</button>
+
+        </div>
+        <div id="popup" class="popup">Great job! You're done for the day! <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXQyZHh0MjBocjlqYWZoOXR0NHV3eDB5ZzhtN2cyYzF5azd3djNteCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/artj92V8o75VPL7AeQ/giphy.gif"></div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
