@@ -88,7 +88,7 @@ button {
 
 .popup {
     position: fixed;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.3);
@@ -100,10 +100,6 @@ button {
     font-size: 55px;
     font-weight: bold;
     z-index: 1000;
-}
-
-.popup img {
-    width: 40%;
 }
 
 ul li{
@@ -153,6 +149,7 @@ ul li span {
 ul li span:hover {
     background: #edeef0;
 }
+
 
 
 

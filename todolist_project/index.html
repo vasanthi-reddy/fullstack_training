@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2"></script>
+    
+
 </head>
 <body>
     <div class="container">
@@ -18,9 +21,14 @@
             <button class="done" id="doneButton" onclick="clearList()">Done &#127881</button>
 
         </div>
-        <div id="popup" class="popup">Great job! You're done for the day! <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXQyZHh0MjBocjlqYWZoOXR0NHV3eDB5ZzhtN2cyYzF5azd3djNteCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/artj92V8o75VPL7AeQ/giphy.gif"></div>
+        <div id="popup" class="popup">Great job! You're done for the day!</div>
 
     </div>
     <script src="script.js"></script>
+    
 </body>
 </html>
+
+<!--for more features
+Add edit button for tasks
+Replace localStorage with MongoDB backend for real-time sync.-->
